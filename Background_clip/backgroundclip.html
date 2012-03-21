@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Background clip</title>
+<style type="text/css">
+#hola {
+	background-color: #999;
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size:11px;
+	padding-top:10px; text-align:center; text-shadow:1px 1px 0 #fff, 0px -1px 2px #fff, 0px 0px 1px #fff;
+	
+	background-color: #cdcdcd;
+background-image: -webkit-gradient(radial, 50% 50%,200,50% 50%,20, from(rgb(137, 137, 137)), to(rgb(205, 205, 205)));
+background-image: -webkit-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+background-image: -moz-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+background-image: -o-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+background-image: -ms-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+background-image: radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+
+}
+h1{ font-size:28px; margin-bottom:25px;} h2{ font-size:22px; margin-bottom:2px;}
+
+
+span{ font-size:120px; font-weight:bold; letter-spacing:4px; color:transparent;
+		background:url(picc.jpg) top left repeat;
+		-webkit-background-clip:text;
+		text-shadow:none;
+		transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
+		
+span:hover{ color: rgba(249, 214, 92, 0.4); background-position:bottom right; 
+			transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
+
+#contenedor{ width:240px; height:120px; margin:0 10px 35px; background-color:#CCC; padding:10px; display:inline-block; vertical-align:top;
+			border-radius:8px;
+			
+			border:5px dashed rgba(50, 50, 50, 0.5);}
+
+
+/*   Safari interpreta "content-box"  como "border-box"  */
+
+.border{ -webkit-background-clip: border-box;}
+.content{ -webkit-background-clip:content-box;}
+.clip{ -webkit-background-clip: padding-box;}
+
+.fondo{ background:url(picc.jpg) top left; transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
+.fondo:hover{ background:url(picc.jpg) bottom right; transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
+			
+</style>
+</head>
+
+<body>
+<div id="hola">
+<h1>Propiedad Background-clip</h1>
+<div id="contenedor" class="border">Ejemplo <br />con<br />"background-clip: border-box" <br />(modo default)</div>
+<div id="contenedor" class="content">Ejemplo <br />con<br /> "background-clip: border-box"</div>
+<div id="contenedor" class="clip">Ejemplo <br />con<br /> "background-clip: border-box"</div>
+
+<br />
+
+<div id="contenedor" class="border fondo">Ejemplo <br />con<br />"background-clip: border-box" y "background-image"<br />(modo default)</div>
+<div id="contenedor" class="content fondo">Ejemplo <br />con<br />"background-clip: border-box" y "background-image"</div>
+<div id="contenedor" class="clip fondo">Ejemplo <br />con<br />"background-clip: border-box" y "background-image"</div>
+
+<h2>Propiedad "background-clip: text"</h2>
+solo disponible para webkit (Chrome y Safari)<br />
+
+<span>MAWEB</span>
+
+</div>
+
+</body>
+</html>
