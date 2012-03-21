@@ -4,20 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Background clip</title>
 <style type="text/css">
-#hola {
-	background-color: #999;
+*{margin:0;}
+body{ }
+#hola { 
+	height:100%; min-height:100%;
+	
 	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size:11px;
 	padding-top:10px; text-align:center; text-shadow:1px 1px 0 #fff, 0px -1px 2px #fff, 0px 0px 1px #fff;
 	
 	background-color: #cdcdcd;
-background-image: -webkit-gradient(radial, 50% 50%,200,50% 50%,20, from(rgb(137, 137, 137)), to(rgb(205, 205, 205)));
-background-image: -webkit-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
-background-image: -moz-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
-background-image: -o-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
-background-image: -ms-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
-background-image: radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
-
+	background-image: -webkit-gradient(radial, 50% 50%,200,50% 50%,20, from(rgb(137, 137, 137)), to(rgb(205, 205, 205)));
+	background-image: -webkit-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+	background-image: -moz-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+	background-image: -o-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+	background-image: -ms-radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
+	background-image: radial-gradient(50% 50%, rgb(205, 205, 205), rgb(137, 137, 137));
 }
+
 h1{ font-size:28px; margin-bottom:25px;} h2{ font-size:22px; margin-bottom:2px;}
 
 
@@ -38,13 +41,12 @@ span:hover{ color: rgba(249, 214, 92, 0.4); background-position:bottom right;
 
 /*   Safari interpreta "content-box"  como "border-box"  */
 
-.border{ -webkit-background-clip: border-box;}
-.content{ -webkit-background-clip:content-box;}
-.clip{ -webkit-background-clip: padding-box;}
+.border{ -webkit-background-clip: border-box;background-clip: border-box;}
+.content{ -webkit-background-clip:content-box;background-clip:content-box;}
+.clip{ -webkit-background-clip: padding-box;background-clip: padding-box;}
 
 .fondo{ background:url(picc.jpg) top left; transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
-.fondo:hover{ background:url(picc.jpg) bottom right; transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}
-			
+.fondo:hover{ background:url(picc.jpg) bottom right; transition:all .5s; -webkit-transition:all .5s; -moz-transition:all .5s;}	
 </style>
 </head>
 
